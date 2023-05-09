@@ -4,6 +4,7 @@ import { SafeUser } from "@/app/types";
 import React from "react";
 import { IconType } from "react-icons";
 import Avatar from "../Avatar";
+import ListingCategory from "./ListingCategory";
 
 interface ListingInfoProps {
   user: SafeUser | null;
@@ -47,6 +48,13 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         </div>
       </div>
       <hr />
+      {category && (
+        <ListingCategory
+          icon={category.icon}
+          label={category.label}
+          description={category.description}
+        />
+      )}
     </div>
   );
 };
